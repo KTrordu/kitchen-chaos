@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterTopPoint: {fileID: 8694501573823157286}
-  tomatoPrefab: {fileID: 8416953659777389954, guid: 8b416ce7d6252374b9181e04552436de, type: 3}
+  kitchenObjectSO: {fileID: 0}
+  secondClearCounter: {fileID: 0}
+  isTesting: 0
 --- !u!1001 &3805831891289931693
 PrefabInstance:
   m_ObjectHideFlags: 0
