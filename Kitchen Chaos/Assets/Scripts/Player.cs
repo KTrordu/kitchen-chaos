@@ -2,12 +2,45 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private const float INTERACTION_DISTANCE = 2f;
+
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
+    [SerializeField] private LayerMask countersLayerMask;
 
     private bool isWalking;
+    private Vector3 lastInteractDir;
 
     private void Update()
+    {
+        HandleMovement();
+        HandleInteractions();
+    }
+
+    public bool IsWalking() => isWalking;
+
+    private void HandleInteractions()
+    {
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+
+        if(moveDir != Vector3.zero)
+        {
+            lastInteractDir = moveDir;
+        }
+
+        if(Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, 
+            INTERACTION_DISTANCE, countersLayerMask))
+        {
+            if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                // Has clearCounter
+                clearCounter.Interact();
+            }
+        }
+    }
+
+    private void HandleMovement()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
@@ -16,10 +49,10 @@ public class Player : MonoBehaviour
         float moveDistance = moveSpeed * Time.deltaTime;
         float playerRadius = 0.7f;
         float playerHeight = 2f;
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, 
+        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight,
             playerRadius, moveDir, moveDistance);
 
-        if(!canMove)
+        if (!canMove)
         {
             // Cannot move towards moveDir
 
@@ -28,7 +61,7 @@ public class Player : MonoBehaviour
             canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight,
             playerRadius, moveDirX, moveDistance);
 
-            if(canMove)
+            if (canMove)
             {
                 // Can move only on X
                 moveDir = moveDirX;
@@ -64,6 +97,4 @@ public class Player : MonoBehaviour
         float rotateSpeed = 10f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
     }
-
-    public bool IsWalking() => isWalking;
 }
