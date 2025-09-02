@@ -167,3 +167,6 @@ GoogleService-Info.plist
 # Package Manager
 manifest.json.backup
 packages-lock.json
+
+# Buildler
+_Builds/
