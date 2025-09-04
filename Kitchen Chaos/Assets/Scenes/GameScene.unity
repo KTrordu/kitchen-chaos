@@ -5336,6 +5336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 699849252}
+  - component: {fileID: 699849253}
   - component: {fileID: 699849251}
   m_Layer: 0
   m_Name: DeliveryManager
@@ -5356,6 +5357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda0e1568218c064dbb39d6499aba36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   recipeListSO: {fileID: 11400000, guid: 0073e9e02f84f0649aa2533152060705, type: 2}
 --- !u!4 &699849252
 Transform:
@@ -5372,6 +5374,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699849253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699849250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1430366332
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1001 &708185634
 PrefabInstance:
   m_ObjectHideFlags: 0
