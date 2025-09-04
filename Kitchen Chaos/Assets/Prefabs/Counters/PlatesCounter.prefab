@@ -64,6 +64,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2859915755100087496, guid: d429ae174b2b0124dbe468ce274f80a9, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1188150486971116953}
+    - targetCorrespondingSourceObject: {fileID: 2859915755100087496, guid: d429ae174b2b0124dbe468ce274f80a9, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 8752162609096591509}
   m_SourcePrefab: {fileID: 100100000, guid: d429ae174b2b0124dbe468ce274f80a9, type: 3}
 --- !u!4 &3134394223288382810 stripped
@@ -76,6 +79,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2859915755100087496, guid: d429ae174b2b0124dbe468ce274f80a9, type: 3}
   m_PrefabInstance: {fileID: 616627479598187681}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1188150486971116953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404375345631682665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1990491673
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &8752162609096591509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515ccde35aebbd743a7b688201427d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   counterTopPoint: {fileID: 8081604464990752903}
   plateKitchenObjectSO: {fileID: 11400000, guid: 44b2e66a5144965429c9651907fd6301, type: 2}
 --- !u!4 &8081604464990752903 stripped
