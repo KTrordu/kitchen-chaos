@@ -36,6 +36,15 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
         GameInput.Instance.OnInteractAlternateAction += GameInput_OnInteractAlternateAction;
     }
 
+    private void Update()
+    {
+        if(IsOwner)
+        {
+            HandleMovement();
+            HandleInteractions();
+        }
+    }
+
     private void GameInput_OnInteractAlternateAction(object sender, EventArgs e)
     {
         if (!GameManager.Instance.IsGamePlaying()) return;
@@ -54,12 +63,6 @@ public class Player : NetworkBehaviour, IKitchenObjectParent
         {
             selectedCounter.Interact(this);
         }
-    }
-
-    private void Update()
-    {
-        HandleMovement();
-        HandleInteractions();
     }
 
     public bool IsWalking() => isWalking;
